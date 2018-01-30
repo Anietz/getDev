@@ -133,6 +133,7 @@ class UserController extends Controller
                 'password' => bcrypt('test'),
                  'social_name' => $request->name,
                 'profile_image' => $picture['data']['url'],
+                'registration_type'=>1
 
             ]);
 
@@ -198,7 +199,7 @@ class UserController extends Controller
     }
 
 
-    public function edit_profile_picture(Requests\ProfileImageRequest $request){
+    public function edit_profile_picture(Requests $request){
        
         $imageName = 'file_'.time().'.'.$request->file->getClientOriginalExtension();
         $request->file->move(public_path('receipts/'), $imageName);

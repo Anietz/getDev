@@ -30,7 +30,7 @@ Route::group(['prefix' => 'v1','middleware'=>['guest']], function(){
 Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function(){
 	Route::get('get_questions', 'API\UserController@getQuestion');
 	Route::get('user', 'API\UserController@userData');
-	Route::post('updateprofile', 'API\UserController@updateProfile');
+	Route::put('updateprofile', 'API\UserController@updateProfile');
 	Route::post('uploadImage', 'API\UserController@edit_profile_picture');
 
 });
